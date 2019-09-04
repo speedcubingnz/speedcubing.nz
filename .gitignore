@@ -1,0 +1,7 @@
+/silverstripe-cache/
+/.env
+/vendor/
+/themes/
+/_resources/
+/public/_resources/
+/public/assets/
