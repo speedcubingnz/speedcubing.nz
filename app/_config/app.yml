@@ -34,3 +34,6 @@ Bigfork\SilverStripeOAuth\Client\Mapper\GenericMemberMapper:
     'WorldCubeAssociation':
       'Email': 'email'
       'FirstName': 'name'
+SilverStripe\Control\Director:
+  rules:
+    'competitions//$WCAID': 'App\Controller\CompetitionsPageController'
