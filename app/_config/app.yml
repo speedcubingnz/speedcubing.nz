@@ -10,3 +10,27 @@ SilverStripe\View\SSViewer:
     - '$default'
 SilverStripe\i18n\i18n:
   default_locale: 'en_NZ'
+SilverStripe\Core\Injector\Injector:
+  Bigfork\SilverStripeOAuth\Client\Factory\ProviderFactory:
+    properties:
+      providers:
+        'WorldCubeAssociation': '%$WorldCubeAssociationProvider'
+  WorldCubeAssociationProvider:
+    class: 'App\Provider\WorldCubeAssociation'
+    constructor:
+      Options:
+        clientId: '`WCA_CLIENT_ID`'
+        clientSecret: '`WCA_CLIENT_SECRET`'
+        urlAuthorize: 'https://www.worldcubeassociation.org/oauth/authorize'
+        urlAccessToken: 'https://www.worldcubeassociation.org/oauth/token'
+        urlResourceOwnerDetails: 'https://www.worldcubeassociation.org/api/v0/me'
+Bigfork\SilverStripeOAuth\Client\Authenticator\Authenticator:
+  providers:
+    'WorldCubeAssociation':
+      name: 'World Cube Association'
+      scopes: ['public dob email manage_competitions']
+Bigfork\SilverStripeOAuth\Client\Mapper\GenericMemberMapper:
+  mapping:
+    'WorldCubeAssociation':
+      'Email': 'email'
+      'FirstName': 'name'
