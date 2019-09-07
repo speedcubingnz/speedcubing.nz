@@ -32,8 +32,17 @@ Bigfork\SilverStripeOAuth\Client\Authenticator\Authenticator:
 Bigfork\SilverStripeOAuth\Client\Mapper\GenericMemberMapper:
   mapping:
     'WorldCubeAssociation':
+      'WCAID': 'wca_id'
       'Email': 'email'
-      'FirstName': 'name'
+      'Name': 'name'
+      'Birthdate': 'dob'
+      'Gender': 'gender'
+App\Model\Page:
+  extensions:
+    - DNADesign\Elemental\Extensions\ElementalPageExtension
+SilverStripe\Security\Member:
+  extensions:
+    - App\Model\MemberExtension
 SilverStripe\Control\Director:
   rules:
-    'competitions//$WCAID': 'App\Controller\CompetitionsPageController'
+    'abc': 'App\Controller\CompetitionsPageController'

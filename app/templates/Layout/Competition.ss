@@ -8,5 +8,6 @@
         <p>Registration: Opens $RegistrationOpen.Format('EEEE, MMMM d, YYYY, h:mm a') and closes $RegistrationClose.Format('EEEE, MMMM d, YYYY, h:mm a.')</p>
         <p><a href="https://www.worldcubeassociation.org/competitions/$WCAID#competition-events">Events</a></p>
         <p><a href="https://www.worldcubeassociation.org/competitions/$WCAID#competition-schedule">Schedule</a></p>
+        <p><a href="https://www.worldcubeassociation.org/competitions/$WCAID/registrations">Competitors</a></p>
     <% end_with %>
 <% end_if %>

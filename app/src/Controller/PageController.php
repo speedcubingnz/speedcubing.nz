@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Model\Competition;
 use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\ORM\FieldType\DBDate;
 
 class PageController extends ContentController
 {
@@ -28,5 +30,17 @@ class PageController extends ContentController
         parent::init();
         // You can include any CSS or JS required by your project here.
         // See: https://docs.silverstripe.org/en/developer_guides/templates/requirements/
+    }
+
+    public function getUpcomingCompetitions()
+    {
+        $competitions = Competition::get()->filter(['EndDate:GreaterThanOrEqual' => date('Y-m-d', time())]);
+        return $competitions;
+    }
+
+    public function getPastCompetitions()
+    {
+        $competitions = Competition::get()->filter(['EndDate:LessThan' => date('Y-m-d', time())]);
+        return $competitions;
     }
 }

@@ -5,3 +5,5 @@
 /_resources/
 /public/_resources/
 /public/assets/
+/.vscode/
+/silverstripe.log

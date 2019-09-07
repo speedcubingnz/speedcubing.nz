@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a5201a48f5f16e62fc52a229649518e",
+    "content-hash": "82aa9cbffce82587fa12d0cea75476ce",
     "packages": [
         {
             "name": "bigfork/silverstripe-oauth",
@@ -369,6 +369,160 @@
                 "zikula"
             ],
             "time": "2019-08-12T15:00:31+00:00"
+        },
+        {
+            "name": "cwp/starter-theme",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/cwp-starter-theme.git",
+                "reference": "6dab306f7e02cbc0fb576ea3965384c1252557ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/cwp-starter-theme/zipball/6dab306f7e02cbc0fb576ea3965384c1252557ee",
+                "reference": "6dab306f7e02cbc0fb576ea3965384c1252557ee",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4.0"
+            },
+            "suggest": {
+                "cwp/cwp": "Much of the functionality in this theme is enabled by this module"
+            },
+            "type": "silverstripe-theme",
+            "extra": {
+                "installer-name": "starter",
+                "expose": [
+                    "dist",
+                    "ico",
+                    "images"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "CWP Theme",
+            "keywords": [
+                "cwp",
+                "silverstripe",
+                "theme"
+            ],
+            "time": "2019-07-23T03:03:18+00:00"
+        },
+        {
+            "name": "dnadesign/silverstripe-elemental",
+            "version": "4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnadesign/silverstripe-elemental.git",
+                "reference": "a87a1f3f38888a1ee6a398ec8929dfb891802e86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnadesign/silverstripe-elemental/zipball/a87a1f3f38888a1ee6a398ec8929dfb891802e86",
+                "reference": "a87a1f3f38888a1ee6a398ec8929dfb891802e86",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/admin": "^1.4@dev",
+                "silverstripe/cms": "^4.4@dev",
+                "silverstripe/vendor-plugin": "^1",
+                "silverstripe/versioned-admin": "^1.2@dev",
+                "symbiote/silverstripe-gridfieldextensions": "^3.1"
+            },
+            "require-dev": {
+                "silverstripe/recipe-testing": "1.x-dev"
+            },
+            "suggest": {
+                "dnadesign/silverstripe-elemental-subsites": "Adds subsite support to elemental",
+                "dnadesign/silverstripe-elemental-userforms": "Adds userform support to elemental",
+                "dnadesign/silverstripe-elemental-virtual": "Adds support to share blocks between pages",
+                "silverstripe/elemental-blocks": "Adds a set of common SilverStripe content block types",
+                "silverstripe/fulltextsearch": "Adds fulltext search capability for elements using Solr"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "client/dist",
+                    "client/lang"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "DNADesign\\Elemental\\": "src/",
+                    "DNADesign\\Elemental\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandre Saelens",
+                    "email": "alexandre.saelens@dna.co.nz"
+                }
+            ],
+            "description": "Elemental pagetype and collection of Elements",
+            "keywords": [
+                "Content Blocks",
+                "element",
+                "elemental",
+                "silverstripe"
+            ],
+            "time": "2019-07-22T09:22:49+00:00"
+        },
+        {
+            "name": "dnadesign/silverstripe-elemental-userforms",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnadesign/silverstripe-elemental-userforms.git",
+                "reference": "b635fa17be810273c773fd4b58f85ae39ea79f68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnadesign/silverstripe-elemental-userforms/zipball/b635fa17be810273c773fd4b58f85ae39ea79f68",
+                "reference": "b635fa17be810273c773fd4b58f85ae39ea79f68",
+                "shasum": ""
+            },
+            "require": {
+                "dnadesign/silverstripe-elemental": "^4.0@dev",
+                "silverstripe/userforms": "^5.0",
+                "silverstripe/vendor-plugin": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "DNADesign\\ElementalUserForms\\": "src/",
+                    "DNADesign\\ElementalUserForms\\Tests\\": "tests/php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "John Milmine",
+                    "email": "john.milmine@dna.co.nz"
+                }
+            ],
+            "description": "Adds a new element for usersforms",
+            "keywords": [
+                "Content Blocks",
+                "element",
+                "elemental",
+                "silverstripe",
+                "userforms"
+            ],
+            "time": "2018-11-07T12:02:57+00:00"
         },
         {
             "name": "embed/embed",
@@ -1452,6 +1606,36 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+            "name": "revstrat/silverstripe-oauth-buttons",
+            "version": "0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RevStrat/silverstripe-oauth-buttons.git",
+                "reference": "285d2599d5f19a6a126b99595263f42335503c1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RevStrat/silverstripe-oauth-buttons/zipball/285d2599d5f19a6a126b99595263f42335503c1a",
+                "reference": "285d2599d5f19a6a126b99595263f42335503c1a",
+                "shasum": ""
+            },
+            "require": {
+                "bigfork/silverstripe-oauth-login": "*"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "oauth-buttons"
+            },
+            "autoload": {
+                "psr-4": {
+                    "RevStrat\\OAuthButtons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Support for generating login buttons for configured auth providers",
+            "time": "2018-09-17T19:35:28+00:00"
+        },
+        {
             "name": "silverstripe-themes/simple",
             "version": "3.2.0",
             "source": {
@@ -1666,6 +1850,45 @@
                 "silverstripe"
             ],
             "time": "2019-08-02T05:07:51+00:00"
+        },
+        {
+            "name": "silverstripe/bambusa-theme",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/bambusa-theme.git",
+                "reference": "3cc07950e706392b2b3ef289fe8049cbab392e79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/bambusa-theme/zipball/3cc07950e706392b2b3ef289fe8049cbab392e79",
+                "reference": "3cc07950e706392b2b3ef289fe8049cbab392e79",
+                "shasum": ""
+            },
+            "require": {
+                "cwp/starter-theme": "^3.0.0"
+            },
+            "type": "silverstripe-theme",
+            "extra": {
+                "installer-name": "bambusa",
+                "expose": [
+                    "dist",
+                    "ico",
+                    "images",
+                    "css"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "SilverStripe Bambusa theme",
+            "keywords": [
+                "bambusa",
+                "silverstripe",
+                "theme"
+            ],
+            "time": "2019-08-21T03:46:11+00:00"
         },
         {
             "name": "silverstripe/campaign-admin",
@@ -2240,6 +2463,58 @@
             "time": "2019-04-20T23:27:08+00:00"
         },
         {
+            "name": "silverstripe/segment-field",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-segment-field.git",
+                "reference": "17734b05c18244db039c1a8d3555761249247415"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-segment-field/zipball/17734b05c18244db039c1a8d3555761249247415",
+                "reference": "17734b05c18244db039c1a8d3555761249247415",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "silverstripe/reports": "^4.0",
+                "silverstripe/siteconfig": "^4.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "client/dist"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "SilverStripe\\Forms\\": "code/",
+                    "SilverStripe\\Forms\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Pitt",
+                    "email": "cgpitt@gmail.com"
+                }
+            ],
+            "description": "A reusable approach to segment-generating fields",
+            "keywords": [
+                "segment",
+                "silverstripe"
+            ],
+            "time": "2018-09-03T11:17:10+00:00"
+        },
+        {
             "name": "silverstripe/siteconfig",
             "version": "4.4.1",
             "source": {
@@ -2284,6 +2559,82 @@
                 "siteconfig"
             ],
             "time": "2019-05-06T02:57:48+00:00"
+        },
+        {
+            "name": "silverstripe/userforms",
+            "version": "5.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-userforms.git",
+                "reference": "d7c76ecf80ef4791403b028b07ab65dba21be79c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/d7c76ecf80ef4791403b028b07ab65dba21be79c",
+                "reference": "d7c76ecf80ef4791403b028b07ab65dba21be79c",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4.0",
+                "silverstripe/segment-field": "^2.0",
+                "silverstripe/versioned": "^1.0",
+                "symbiote/silverstripe-gridfieldextensions": "^3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "suggest": {
+                "colymba/gridfield-bulk-editing-tools": "Allows for bulk management of form submissions",
+                "silverstripe/gridfieldqueuedexport": "Export large submission as CSV through queued jobs in the background"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "client/dist",
+                    "client/lang",
+                    "client/thirdparty",
+                    "images"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "SilverStripe\\UserForms\\": "code/",
+                    "SilverStripe\\UserForms\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David Craig",
+                    "email": "david@silverstripe.com"
+                },
+                {
+                    "name": "Damian Mooyman",
+                    "email": "damian@silverstripe.com"
+                },
+                {
+                    "name": "Will Rossiter",
+                    "email": "will@fullscreen.io"
+                },
+                {
+                    "name": "Christopher Pitt",
+                    "email": "chris@silverstripe.com"
+                },
+                {
+                    "name": "Scott Hutchinson",
+                    "email": "scott@silverstripe.com"
+                }
+            ],
+            "description": "UserForms enables CMS users to create dynamic forms via a drag and drop interface and without getting involved in any PHP code",
+            "keywords": [
+                "silverstripe",
+                "userforms"
+            ],
+            "time": "2019-05-27T08:01:56+00:00"
         },
         {
             "name": "silverstripe/vendor-plugin",
@@ -4701,7 +5052,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "silverstripe/bambusa-theme": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
