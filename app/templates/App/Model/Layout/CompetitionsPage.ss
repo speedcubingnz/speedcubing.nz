@@ -3,7 +3,7 @@
         <h2>Upcoming Competitions</h2>
         <ul>
         <% loop $UpcomingCompetitions %>
-            $Name
+            <a href="$Link">$Name</a>
         <% end_loop %>
         </ul>
     </section>
