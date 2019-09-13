@@ -63,7 +63,7 @@ class CompetitionsPageController extends PageController
             );
 
             if ($registration = $this->getRegistration()) {
-                $form->sessionMessage('Thank you, your registration has been received.','good');
+                $form->sessionMessage('Thank you, your registration has been received. Payment will be available soon, we will send you an email to notify you when it\'s ready','good');
             } else {
                 $form->setFields(
                     FieldList::create(
@@ -109,7 +109,7 @@ class CompetitionsPageController extends PageController
                 $member->write();
             }
 
-            $form->sessionMessage('Thank you, your registration has been received.','good');
+            $form->sessionMessage('Thank you, your registration has been received. Payment will be available soon, we will send you an email to notify you when it\'s ready','good');
         }
         return $this->redirectBack();
     }
