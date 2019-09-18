@@ -8,7 +8,12 @@
         "sminnee/tagmanager": "^1.0",
         "dnadesign/silverstripe-elemental-userforms": "^3.0",
         "silverstripe/bambusa-theme": "dev-master",
-        "revstrat/silverstripe-oauth-buttons": "^0.6.1"
+        "revstrat/silverstripe-oauth-buttons": "^0.6.1",
+        "league/omnipay": "^3.0",
+        "silverstripe/silverstripe-omnipay": "dev-master",
+        "omnipay/stripe": "^3.1",
+        "omnipay/paypal": "^3.0",
+        "omnipay/manual": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8",

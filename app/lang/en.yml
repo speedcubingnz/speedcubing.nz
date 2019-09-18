@@ -1,0 +1,5 @@
+en:
+  Gateway:
+    Stripe: 'Credit Card'
+    PayPal_Express: 'PayPal'
+    Manual: 'Bank Deposit'

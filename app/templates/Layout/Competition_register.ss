@@ -12,8 +12,10 @@
         <% if $CurrentMember %>
             <p>Hi, $CurrentMember.Name!</p>
             <p>If this is not you, please <a href="$absoluteBaseURL\Security/logout">logout</a> and login again.
-            
+
             $RegistrationForm
+<br><br><br>
+            $PaymentForm
         <% else %>
             $LoginButton
         <% end_if %>

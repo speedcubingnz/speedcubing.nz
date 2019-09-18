@@ -40,9 +40,18 @@ Bigfork\SilverStripeOAuth\Client\Mapper\GenericMemberMapper:
 App\Model\Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension
+App\Model\Registration:
+  extensions:
+    - SilverStripe\Omnipay\Extensions\Payable
 SilverStripe\Security\Member:
   extensions:
     - App\Model\MemberExtension
 SilverStripe\Control\Director:
   rules:
     'abc': 'App\Controller\CompetitionsPageController'
+SilverStripe\Omnipay\Model\Payment:
+  allowed_gateways:
+    - 'PayPal_Express'
+    - 'Manual'
+  has_one:
+    Registration: 'App\Model\Registration'

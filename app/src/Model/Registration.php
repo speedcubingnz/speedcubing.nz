@@ -32,8 +32,4 @@ class Registration extends DataObject
     private static $summary_fields = [
         'Member.Name' => 'Name',
     ];
-
-    /*private static $has_many = [
-        'Payments' => 'Payment',
-    ];*/
 }

@@ -5,6 +5,7 @@ namespace App\Model;
 use App\Model\CompetitionsPage;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\FieldType\DBDatetime;
+use SilverStripe\ORM\FieldType\DBMoney;
 
 class Competition extends DataObject
 {
@@ -19,7 +20,7 @@ class Competition extends DataObject
         'EndDate' => 'Date',
         'RegistrationOpen' => 'Datetime',
         'RegistrationClose' => 'Datetime',
-        'BaseFee' => 'Currency',
+        'BaseFee' => 'Money',
     ];
 
     private static $has_many = [
@@ -34,6 +35,12 @@ class Competition extends DataObject
             'to' => 'Event',
         ]
     ];
+
+    public function populateDefaults() 
+    {
+        $this->BaseFee = DBMoney::create()->setCurrency('NZD');
+        parent::populateDefaults();
+    }
 
     public function IsRegistrationOpen()
     {
@@ -50,8 +57,8 @@ class Competition extends DataObject
         return $close <= $now;
     }
     
-    public function Link()
+    public function Link($action = null)
     {
-        return CompetitionsPage::get()->first()->Link($this->WCAID);
+        return CompetitionsPage::get()->first()->Link($action ? $this->WCAID . '/' . $action : $this->WCAID);
     }
 }

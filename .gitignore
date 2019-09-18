@@ -7,3 +7,4 @@
 /public/assets/
 /.vscode/
 /silverstripe.log
+/app/_config/omnipay.yml
