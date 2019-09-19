@@ -43,6 +43,7 @@ App\Model\Page:
 App\Model\Registration:
   extensions:
     - SilverStripe\Omnipay\Extensions\Payable
+    - Bummzack\SsOmnipayUI\Extensions\PayableUIExtension
 SilverStripe\Security\Member:
   extensions:
     - App\Model\MemberExtension

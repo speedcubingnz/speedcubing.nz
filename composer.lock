@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97d06a13240c05566cc3fb5a2ff106f1",
+    "content-hash": "8344c51273a83c9e8ac562c8dc54e58f",
     "packages": [
         {
             "name": "bigfork/silverstripe-oauth",
@@ -191,6 +191,55 @@
             ],
             "description": "Colored Line Formatter for Monolog",
             "time": "2015-01-07T22:12:35+00:00"
+        },
+        {
+            "name": "bummzack/silverstripe-omnipay-ui",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bummzack/silverstripe-omnipay-ui.git",
+                "reference": "bb476242ec5a5e9b803b5ce8b696ccd84437695e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bummzack/silverstripe-omnipay-ui/zipball/bb476242ec5a5e9b803b5ce8b696ccd84437695e",
+                "reference": "bb476242ec5a5e9b803b5ce8b696ccd84437695e",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/admin": "^1.0",
+                "silverstripe/silverstripe-omnipay": "^3@dev"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "omnipay-ui",
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "expose": [
+                    "client/dist"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bummzack\\SsOmnipayUI\\": "src/",
+                    "Bummzack\\SsOmnipayUI\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "SilverStripe Omnipay UI Module",
+            "keywords": [
+                "omnipay",
+                "payment",
+                "silverstripe"
+            ],
+            "time": "2018-02-09T21:41:04+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -6189,7 +6238,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "silverstripe/bambusa-theme": 20,
-        "silverstripe/silverstripe-omnipay": 20
+        "silverstripe/silverstripe-omnipay": 20,
+        "bummzack/silverstripe-omnipay-ui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
