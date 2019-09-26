@@ -17,6 +17,7 @@ class MemberExtension extends DataExtension
         'WCAID' => 'Varchar(10)',
         'Birthdate' => 'Date',
         'Gender' => 'Varchar(1)',
+        'CountryISO2' => 'Varchar(2)',
         'AcceptsMarketing' => 'Boolean',
     ];
 

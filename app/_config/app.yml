@@ -37,6 +37,7 @@ Bigfork\SilverStripeOAuth\Client\Mapper\GenericMemberMapper:
       'Name': 'name'
       'Birthdate': 'dob'
       'Gender': 'gender'
+      'CountryISO2': 'country_iso2'
 App\Model\Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension
