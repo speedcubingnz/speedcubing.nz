@@ -6,6 +6,9 @@ use App\Model\CompetitionsPage;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\FieldType\DBDatetime;
 use SilverStripe\ORM\FieldType\DBMoney;
+use SilverStripe\Forms\GridField\GridFieldAddNewButton;
+use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
+use SilverStripe\Forms\GridField\GridFieldExportButton;
 
 class Competition extends DataObject
 {
@@ -40,6 +43,35 @@ class Competition extends DataObject
     {
         $this->BaseFee = DBMoney::create()->setCurrency('NZD');
         parent::populateDefaults();
+    }
+
+    public function getCMSfields()
+    {
+        $fields = parent::getCMSFields();
+
+        if ($gridField = $fields->dataFieldByName('Registrations')) {
+            $wcaExportColumns = [
+                'WCAStatus' => 'Status',
+                'Member.Name' => 'Name',
+                'Member.Country' => 'Country',
+                'Member.WCAID' => 'WCA ID',
+                'Member.Birthdate' => 'Birth Date',
+                'Member.Gender' => 'Gender',
+                'Member.Email' => 'Email',
+            ];
+
+            foreach ($this->CompetitionEvents() as $compEvent) {
+                $wcaEventID = $compEvent->Event()->WCAEventID;
+                $wcaExportColumns[$wcaEventID] = $wcaEventID;
+            }
+
+            $gridField->getConfig()
+                ->removeComponentsByType(GridFieldAddNewButton::class)
+                ->removeComponentsByType(GridFieldAddExistingAutocompleter::class)
+                ->addComponent(new GridFieldExportButton('buttons-before-left', $wcaExportColumns));
+        }
+
+        return $fields;
     }
 
     public function IsRegistrationOpen()
