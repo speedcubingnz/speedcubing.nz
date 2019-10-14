@@ -63,4 +63,13 @@ class Registration extends DataObject
         } 
         return false;
     }
+
+    public function FeePayable()
+    {
+        $fee = $this->Competition()->BaseFee;
+        foreach ($this->CompetitionEvents() as $event) {
+            $fee->setAmount(bcadd($fee->getAmount(), $event->FeeAmount, 2));
+        }
+        return $fee;
+    }
 }

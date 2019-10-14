@@ -73,7 +73,7 @@ class CompetitionsPageController extends PageController
                 $form->setFields(
                     FieldList::create(
                         HiddenField::create('WCAID', 'WCAID', $competition->WCAID),
-                        ReadonlyField::create('RegistrationFee', 'Registration Fee', $competition->BaseFee->Nice()),
+                        ReadonlyField::create('RegistrationFee', 'Registration Fee', $registration->FeePayable()->Nice()),
                         CheckboxSetField::create('CompetitionEvents', 'Events', $events->map('ID', 'Name'), $registration->CompetitionEvents()),
                         TextareaField::create('Comments', 'Comments', $registration->Comments ? $registration->Comments : ' '),
                         CheckboxField::create('AcceptsMarketing', 'Subscribe to receive emails about upcoming competitions in New Zealand.')
@@ -85,8 +85,8 @@ class CompetitionsPageController extends PageController
                 $form->setFields(
                     FieldList::create(
                         HiddenField::create('WCAID', 'WCAID', $competition->WCAID),
-                        ReadonlyField::create('RegistrationFee', 'Registration Fee', $competition->BaseFee->Nice()),
-                        CheckboxSetField::create('CompetitionEvents', 'Events', $events->map('ID', 'Name')),
+                        ReadonlyField::create('RegistrationFee', ($competition->HasEventFees() ? 'Base Registration Fee' : 'Registration Fee'), $competition->BaseFee->Nice()),
+                        CheckboxSetField::create('CompetitionEvents', 'Events', $events->map('ID', ($competition->HasEventFees() ? 'NameWithFee' : 'Name'))),
                         TextareaField::create('Comments', 'Comments', ''),
                         CheckboxField::create('AcceptsMarketing', 'Subscribe to receive emails about upcoming competitions in New Zealand.')
                     )
@@ -193,7 +193,7 @@ class CompetitionsPageController extends PageController
         if ($member = Security::getCurrentUser()) {
             $competition = $this->getCompetition();
             if ($registration = $this->getRegistration()) {
-                $paymentDue = $competition->BaseFee;
+                $paymentDue = $registration->FeePayable();
 
                 $payment = Payment::create()
                     ->init($data['PaymentMethod'], $paymentDue->Amount, $paymentDue->Currency)

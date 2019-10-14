@@ -74,6 +74,14 @@ class Competition extends DataObject
         return $fields;
     }
 
+    public function HasEventFees()
+    {
+        if ($events = $this->CompetitionEvents()->filter(['FeeAmount:GreaterThan' => '0'])) {
+            return true;
+        }
+        return false;
+    }
+
     public function IsRegistrationOpen()
     {
         $now = DBDatetime::now()->getTimestamp();

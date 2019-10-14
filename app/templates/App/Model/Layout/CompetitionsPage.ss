@@ -14,7 +14,7 @@
         <h2>Past Competitions</h2>
         <ul>
         <% loop $PastCompetitions %>
-            $Name
+            <a href="https://www.worldcubeassociation.org/competitions/$WCAID">$Name</a>
         <% end_loop %>
         </ul>
     </section>

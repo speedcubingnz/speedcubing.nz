@@ -35,4 +35,9 @@ class CompetitionEvent extends DataObject
     {
         return $this->Event()->Name;
     }
+
+    public function getNameWithFee()
+    {
+        return ($this->Event()->Name . ' - ' . $this->Fee->Nice());
+    }
 }
