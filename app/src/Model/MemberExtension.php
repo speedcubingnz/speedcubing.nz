@@ -24,4 +24,13 @@ class MemberExtension extends DataExtension
     private static $has_many = [
         'Registrations' => Registration::class,
     ];
+
+    public function WCACountryID()
+    {
+        $id = '';
+        if ($country = Country::get()->filter(['ISO2' => $this->owner->CountryISO2])->first()) {
+            $id = $country->WCAID;
+        }
+        return $id;
+    }
 }

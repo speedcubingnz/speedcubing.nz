@@ -53,7 +53,7 @@ class Competition extends DataObject
             $wcaExportColumns = [
                 'WCAStatus' => 'Status',
                 'Member.Name' => 'Name',
-                'Member.CountryISO2' => 'Country',
+                'Member.WCACountryID' => 'Country',
                 'Member.WCAID' => 'WCA ID',
                 'Member.Birthdate' => 'Birth Date',
                 'Member.Gender' => 'Gender',
