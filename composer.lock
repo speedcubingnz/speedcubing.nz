@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8344c51273a83c9e8ac562c8dc54e58f",
+    "content-hash": "ad00f198f33f8b3a516e023ace94ae7f",
     "packages": [
         {
             "name": "bigfork/silverstripe-oauth",
@@ -1194,6 +1194,39 @@
                 "payment"
             ],
             "time": "2019-03-20T14:28:28+00:00"
+        },
+        {
+            "name": "littlegiant/silverstripe-persistentgridfield",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/littlegiant/silverstripe-persistentgridfield.git",
+                "reference": "b6d9f3b727f9c72895b2962ba93bd513c46ea160"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/littlegiant/silverstripe-persistentgridfield/zipball/b6d9f3b727f9c72895b2962ba93bd513c46ea160",
+                "reference": "b6d9f3b727f9c72895b2962ba93bd513c46ea160",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "silverstripe/framework": "4.*"
+            },
+            "type": "silverstripe-vendormodule",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Stevie Mayhew",
+                    "email": "stevie.mayhew@littlegiant.co.nz"
+                },
+                {
+                    "name": "Tom Alexander",
+                    "email": "tom.alexander@littlegiant.co.nz"
+                }
+            ],
+            "description": "GridField with persistent state for SilverStripe",
+            "time": "2018-09-07T02:50:26+00:00"
         },
         {
             "name": "m1/env",

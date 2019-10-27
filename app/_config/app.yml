@@ -6,8 +6,8 @@ SilverStripe\Core\Manifest\ModuleManifest:
 SilverStripe\View\SSViewer:
   themes:
     - '$public'
-    - 'simple'
     - '$default'
+    - 'simple'
 SilverStripe\i18n\i18n:
   default_locale: 'en_NZ'
 SilverStripe\Core\Injector\Injector:
@@ -15,6 +15,8 @@ SilverStripe\Core\Injector\Injector:
     properties:
       providers:
         'WorldCubeAssociation': '%$WorldCubeAssociationProvider'
+  SilverStripe\Forms\GridField\GridField:
+    class: LittleGiant\PersistentGridField\PersistentGridField
   WorldCubeAssociationProvider:
     class: 'App\Provider\WorldCubeAssociation'
     constructor:
@@ -38,6 +40,9 @@ Bigfork\SilverStripeOAuth\Client\Mapper\GenericMemberMapper:
       'Birthdate': 'dob'
       'Gender': 'gender'
       'CountryISO2': 'country_iso2'
+Page:
+  extensions:
+    - DNADesign\Elemental\Extensions\ElementalPageExtension
 App\Model\Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension
