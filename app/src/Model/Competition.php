@@ -29,6 +29,7 @@ class Competition extends DataObject
     private static $has_many = [
         'CompetitionEvents' => CompetitionEvent::class,
         'Registrations' => Registration::class,
+        'RegistrationPeriods' => CompetitionRegistrationPeriod::class,
     ];
 
     private static $many_many = [

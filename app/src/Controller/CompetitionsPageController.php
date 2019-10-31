@@ -82,10 +82,19 @@ class CompetitionsPageController extends PageController
 
                 $form->makeReadonly();
             } else {
+                if ($registrationPeriods = $competition->RegistrationPeriods()) {
+                    $registrationFees = '';
+                    foreach ($registrationPeriods as $period) {
+                        $registrationFees .= $period->BaseFee->Nice() . ' until ' . $period->dbObject('EndDate')->Format('MMM d') . '. ';
+                    }
+                } else {
+                    $registrationFees = $competition->BaseFee->Nice();
+                }
+
                 $form->setFields(
                     FieldList::create(
                         HiddenField::create('WCAID', 'WCAID', $competition->WCAID),
-                        ReadonlyField::create('RegistrationFee', ($competition->HasEventFees() ? 'Base Registration Fee' : 'Registration Fee'), $competition->BaseFee->Nice()),
+                        ReadonlyField::create('RegistrationFee', ($competition->HasEventFees() ? 'Base Registration Fee' : 'Registration Fee'), $registrationFees),
                         CheckboxSetField::create('CompetitionEvents', 'Events', $events->map('ID', ($competition->HasEventFees() ? 'NameWithFee' : 'Name'))),
                         TextareaField::create('Comments', 'Comments', ''),
                         CheckboxField::create('AcceptsMarketing', 'Subscribe to receive emails about upcoming competitions in New Zealand.')

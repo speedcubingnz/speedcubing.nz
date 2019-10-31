@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use SilverStripe\ORM\DataObject;
+use SilverStripe\ORM\FieldType\DBDatetime;
 use SilverStripe\Security\Member;
 use SilverStripe\Versioned\Versioned;
 
@@ -66,7 +67,11 @@ class Registration extends DataObject
 
     public function FeePayable()
     {
-        $fee = $this->Competition()->BaseFee;
+        if ($registrationPeriods = $this->Competition()->RegistrationPeriods()) {
+            $fee = $registrationPeriods->sort(['"EndDate" ASC'])->filter(['EndDate:GreaterThanOrEqual' => DBDatetime::now()])->first()->BaseFee;
+        } else {
+            $fee = $this->Competition()->BaseFee;
+        }
         foreach ($this->CompetitionEvents() as $event) {
             $fee->setAmount(bcadd($fee->getAmount(), $event->FeeAmount, 2));
         }
